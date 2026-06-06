@@ -60,38 +60,10 @@ export default function Home() {
       <section className="hero">
         {/* Spline 3D Animation */}
 
-  
+        <Spline scene="https://prod.spline.design/invEViyBFqcVlB2g/scene.splinecode" />
 
-        <div className="spline-container">
-          {!splineReady && (
-            <div className="spline-fallback">
-              <div className="blob-animation">
-                <div
-                  className="blob blob-1"
-                  style={{ background: moodColors[currentMood] }}
-                />
-                <div
-                  className="blob blob-2"
-                  style={{ background: moodColors[currentMood] + "99" }}
-                />
-                <div
-                  className="blob blob-3"
-                  style={{ background: moodColors[currentMood] + "55" }}
-                />
-              </div>
-            </div>
-          )}
+     
 
-
-
-          <div
-            className={`spline-wrapper ${splineReady ? "visible" : "hidden"}`}
-          >
-            <Spline src="" onLoad={() => setSplineReady(true)} />
-          </div>
-        </div>
-
-        
         {/* Hero Text */}
         <div className={`hero-content ${isLoaded ? "hero-loaded" : ""}`}>
           <div className="mood-tag">
@@ -132,7 +104,6 @@ export default function Home() {
                 </div>
               ))}
             </div>
-          
           </div>
         </div>
       </section>
