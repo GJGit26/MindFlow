@@ -11,6 +11,7 @@ const app = express();
 
 app.use(cors({
   origin: [
+     "https://mindflow-journel.netlify.app/",
     "https://mindflow-journel.netlify.app",
     "http://localhost:3000"
   ],
@@ -29,10 +30,10 @@ app.get("/api/health", (req, res) =>
 mongoose
   .connect(process.env.MONGO_URI || "mongodb://localhost:27017/mindflow")
   .then(() => {
-    console.log("✅ MongoDB connected");
+    console.log("MongoDB connected");
     const PORT = process.env.PORT || 5000;
     app.listen(PORT, () => 
-      console.log(`🚀 Server running on port ${PORT}`)
+      console.log(`Server running on port ${PORT}`)
     );
   })
   .catch((err) => console.error("MongoDB error:", err));
